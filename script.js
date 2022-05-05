@@ -25,21 +25,18 @@ function createSquares(){
 function setDimensions(){
     container.setAttribute('style', `grid-template: repeat(${gridDim.value}, 1fr) / repeat(${gridDim.value}, 1fr);`);
 }
-
-function resetColor(){
-    for(i = 0; i < allDivs[0].children.length; i++){
-        allDivs[0].children[i].classList.remove('paintBlack');
+function removeAllChildNodes(parent){
+    while (parent.firstChild){
+        parent.removeChild(parent.firstChild);
     }
 }
-
 myForm.addEventListener('submit', (e) =>{
     e.preventDefault();
     console.log(`${gridDim.value}` + ' x ' + `${gridDim.value}`);
+    removeAllChildNodes(container);
     createSquares();
     setDimensions();
-    resetColor();
 });
-
 div.addEventListener("click", function(event){
     //event.target is now accessible
     console.log(event.target)
