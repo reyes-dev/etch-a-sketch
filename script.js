@@ -37,8 +37,8 @@ myForm.addEventListener('submit', (e) =>{
     createSquares();
     setDimensions();
 });
-div.addEventListener("click", function(event){
+div.addEventListener("mouseover", function(event){
     //event.target is now accessible
     console.log(event.target)
-      event.target.classList.toggle('paintBlack');
+      event.target.classList.add('paintBlack');
   });
