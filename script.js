@@ -3,6 +3,10 @@ const myForm = document.querySelector('#myForm');
 const gridDim = document.querySelector('#gridDim');
 const container = document.querySelector('.container');
 const numInputs = document.querySelectorAll('input[type=number]');
+const div = document.querySelector('div');
+const allDivs = document.querySelectorAll('div');
+createSquares();
+setDimensions();
 
 numInputs.forEach(function(input){
     input.addEventListener('change', function(e){
@@ -21,11 +25,23 @@ function createSquares(){
 function setDimensions(){
     container.setAttribute('style', `grid-template: repeat(${gridDim.value}, 1fr) / repeat(${gridDim.value}, 1fr);`);
 }
+
+function resetColor(){
+    for(i = 0; i < allDivs[0].children.length; i++){
+        allDivs[0].children[i].classList.remove('paintBlack');
+    }
+}
+
 myForm.addEventListener('submit', (e) =>{
     e.preventDefault();
     console.log(`${gridDim.value}` + ' x ' + `${gridDim.value}`);
     createSquares();
     setDimensions();
+    resetColor();
 });
-createSquares();
-setDimensions();
+
+div.addEventListener("click", function(event){
+    //event.target is now accessible
+    console.log(event.target)
+      event.target.classList.toggle('paintBlack');
+  });
