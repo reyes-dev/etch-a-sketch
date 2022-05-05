@@ -4,13 +4,19 @@
 }
 
 body{
-    background-color: #fcde67;
+    background-color: #fef9f8;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
     width: 100%;
     min-height: 100vh;
+}
+h1{
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
+    font-weight: 700;
+    font-size: 60px;
+    color: #ef9273;
 }
 
 .container{
@@ -21,7 +27,7 @@ body{
 }
 #container{
     background-color: #fef9f8;
-    border: 4px solid #5bccf6 ;
+    border: 4px solid #ef9273 ;
     border-radius: 2px;
 
 }
@@ -45,5 +51,23 @@ div.container > div:hover{
 .form{
     display: flex;
     flex-direction: column-reverse;
-    gap: 32px;
+    gap: 16px;
+}
+.gridBtn{
+    padding:0.65em 1.2em;
+    border:0.1em solid #ef9273;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#ef9273;
+    text-align:center;
+    transition: all 0.2s;
+    background-color: #fef9f8;
+
+}
+.gridBtn:hover{
+    background-color: #fef9d2;
 }
